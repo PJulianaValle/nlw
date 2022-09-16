@@ -1,0 +1,121 @@
+* {
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    margin-top: 32px;
+}
+
+header img {
+    width: 100%;
+    border-radius: 50%;
+}
+
+header div {
+    width: 120px;
+    margin: auto;
+    background-image: linear-gradient(90deg, #2a2634 0% , black 100%);
+    border-radius: 50%;
+    display: flex;
+    padding: 4px;
+}
+
+/* serve para tirar os pontos ao lado de cada imagem */
+ul {
+    list-style: none;  
+}
+
+body * {
+    font-family: 'Quicksand', monospace;
+    line-height: 160%;
+}
+
+body {
+    background-image: url(./assets/bg.jpg);
+    background-position: center top;
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    background-color: #121214;
+}
+
+main {
+    max-width: 580px;
+    width: 90%;
+    display: grid; /* As 'caixas' permanecem uma abaixo da outra (grid) e com o gap ocorre o espaçamento entre elas */
+    gap: 24px;
+    margin: 32px auto; /* 32px fez a margem em cima, em baixo e nas laterais dos 'cartões' */
+}
+
+section {
+    color: aliceblue;
+    background-image: linear-gradient(90deg, #2a2634 0% , black 100%);
+    border-radius: 10px;
+}
+
+section ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px; /* gap = são os espaços entre as imagens dos jogos */
+    margin-top: 20px;
+}
+
+section div {
+    padding: 32px;
+    padding-top: 20px;
+    border-radius: 10px;
+    border-top: 4px solid deeppink;
+}
+
+section h2 {
+    letter-spacing: -0.50px;
+    margin-top: 5px;
+}
+
+section p {
+    letter-spacing: -0.20px;
+    color: #a1a1aa;
+}
+
+.games-list img {
+    width: 90px;
+    border-radius: 20px;
+}
+
+.games-list li:hover {
+    transform: scale(1.2); /* :hover permite colocarmos uma escala para quando o usuário passar o mouse, a imagem aumentar */
+}
+
+.streamers img {
+    border-radius: 50%;
+    width: 60px;
+    border: 2px solid deeppink;
+} 
+
+.streamers li:hover {
+    transform: scale(1.4);
+}
+
+/* animation */
+
+@keyframes TopDown {
+    0% {
+        transform: translateX(32px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.games-list li {
+    animation: TopDown .5s backwards;
+    animation-delay: 1s;
+}
+
+.streamers li {
+    animation: TopDown .5s backwards;
+    animation-delay: 1.5s;
+}
